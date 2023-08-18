@@ -1,9 +1,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const app = express();
 const fs = require("fs");
 const port = 3000;
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get("/todos", (req, res) => {
   fs.readFile("todos.json", "utf-8", (err, data) => {

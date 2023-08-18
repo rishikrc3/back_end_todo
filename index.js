@@ -1,10 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const path = require("path");
 const app = express();
 const port = 3000;
 let todos = [];
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get("/todos", (req, res) => {
   res.json(todos);
